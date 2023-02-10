@@ -1,4 +1,4 @@
-zReadMe FINALPROJECT
+ReadMe FINALPROJECT
 
 Duración del proyecto: 07/02/2023 - 24/02/2023
 
@@ -36,9 +36,20 @@ Dia 4 - 10/02/2023 / Viernes
 
 Objetivo:
 
+Seguir asimilando conceptos y reforzar lo aprendido para poder seguir desarrollando el proyecto. Ir cerrando apartados y funciones. A la vez estilar páginas y elementos para apreciar un cambio y poder ver que “forma” va cogiendo el sitio web.
+
 Tareas a realizar:
 
+Asignar colores y tipografía
+Dar estilo al navegador
+Dar estilo a los botones
+Dar estilo a los campos de texto
+Seguir con el apartado Tasks
+Empezar con el apartado profile
+
 Tareas realizadas:
+
+Apartado signin
 
 Dia 5 - 11/02/2023 / Sabado
 
