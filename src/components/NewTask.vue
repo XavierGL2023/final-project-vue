@@ -3,12 +3,12 @@
     <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
     </div>
-    <div>
+    <div class="task-field">
         <div class="input-field">
             <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
         </div>
         <div class="input-field">
-            <input type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description">
+            <textarea type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description"  maxlength="500" rows="3"></textarea>
         </div>
         <button @click="addTask" class="button">Add</button>
     </div>
@@ -52,5 +52,23 @@ if(name.value.length === 0 || description.value.length === 0){
 
 </script>
 
-<style></style>
+<style>
+    .task-field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"] {
+    border-radius: 0.5rem;
+    border-width: 1px;
+    padding: 0.875rem 1.25rem;
+    }
+
+    textarea[type="text"] {
+    border-radius: 0.5rem;
+    border-width: 1px;
+    padding: 0.875rem 1.25rem;
+    }
+</style>
   

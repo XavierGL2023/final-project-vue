@@ -38,6 +38,13 @@ const toggleButton = () => {
 .clase2{
     color: brown;
 }
+
+button {
+    border-radius: 0.5rem;
+    border-width: 1px;
+    padding: 0.875rem 1.25rem;
+}
+
 </style>
 
 <!--
