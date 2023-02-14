@@ -9,9 +9,11 @@
         <li>
           <router-link to="/">Task Manager</router-link>
         </li>
-
         <li>
-          <router-link to="/account">Your Account</router-link>
+          <router-link to="/">Clock</router-link>
+        </li>
+        <li>
+          <router-link to="/account">Profile</router-link>
         </li>
     </ul>
 

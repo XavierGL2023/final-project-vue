@@ -2,6 +2,7 @@
   <Nav />
   <h1>Name: {{username}}</h1>
   <img :src="avatar_url ? avatar_url : 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png'" alt="Profile picture">
+  <button @click="editProfile"> Editar</button>
 </template>
 
 <script setup>
@@ -9,6 +10,7 @@
   import { onMounted, ref, toRefs } from 'vue'
   import { useUserStore } from "../stores/user";
   import Nav from '../components/Nav.vue';
+  import { useRouter } from "vue-router";
 
   const userStore = useUserStore();
 
@@ -16,6 +18,8 @@
   const username = ref(null);
   const website = ref(null);
   const avatar_url = ref(null);
+
+  const redirect = useRouter();
 
   onMounted(() => {
     getProfile();
@@ -38,6 +42,12 @@
       loading.value = false
     }
   }
+
+  const editProfile = () => {
+    console.log("click");
+    redirect.push({path: "/edit"}); 
+  }
+
 </script>
 
 <style>

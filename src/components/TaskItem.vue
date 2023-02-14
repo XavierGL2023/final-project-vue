@@ -3,7 +3,7 @@
     <h3 :class="completedTask ? 'clase1' : 'clase2'">{{task.title}}</h3>
     <button @click="toggleButton">Completed {{task.title}}</button>
     <button @click="deleteTask">Delete {{task.title}}</button>
-    <button @click="editTask">Delete {{task.title}}</button>
+    <button @click="editTask">Editar {{task.title}}</button>
     
 </div>
 </template>
