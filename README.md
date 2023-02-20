@@ -93,5 +93,3 @@ Objetivo:
 Tareas a realizar:
 
 Tareas realizadas:
-gregherthtrrtyhjt
-git add .
