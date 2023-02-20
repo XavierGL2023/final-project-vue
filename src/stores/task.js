@@ -35,3 +35,31 @@ export const useTaskStore = defineStore("tasks", () => {
   };
   return { tasksArr, fetchTasks, addTask, deleteTask };
 });
+
+const updateTask = async (id, updatedTaskData) => {
+  const { data, error } = await supabase
+    .from("tasks")
+    .update(updatedTaskData)
+    .match({ id });
+
+  if (error) {
+    console.log(error);
+    return null;
+  }
+
+  return data;
+};
+
+const markTaskCompleted = async (id) => {
+  const { data, error } = await supabase
+    .from("tasks")
+    .update({ completed: true })
+    .match({ id });
+
+  if (error) {
+    console.log(error);
+    return null;
+  }
+
+  return data;
+};

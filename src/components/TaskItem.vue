@@ -1,11 +1,17 @@
 <template>
-<div class="container">
-    <h3 :class="completedTask ? 'clase1' : 'clase2'">{{task.title}}</h3>
-    <button @click="toggleButton">Completed {{task.title}}</button>
-    <button @click="deleteTask">Delete {{task.title}}</button>
-    <button @click="editTask">Editar {{task.title}}</button>
-    
-</div>
+    <div class="container">
+        <div class="task-item">
+        <h3 :class="completedTask ? 'clase1' : 'clase2'">{{task.title}}</h3>
+        <p>
+
+        </p>
+        </div>
+        <div class="buttons-task">
+        <button class="ok_button" @click="toggleButton"></button>
+        <button class="delete_button" @click="deleteTask"></button>
+        <button class="edit_button" @click="editTask"></button>
+        </div>
+    </div>
 </template>
 
 <script setup>
@@ -32,17 +38,65 @@ const toggleButton = () => {
 </script>
 
 <style>
-.clase1{
-    color: blue;
+
+.hover-bg {
+    background-color: white;
+  }
+
+.container{
+display: flex;
+flex-wrap: wrap;
+width: 300px;
+background-color: #F4AD28;
+padding: 2%;
+border-radius: 1em;
+flex-basis: 25%;
 }
-.clase2{
-    color: brown;
+
+.buttons-task {
+    margin: auto;
+    margin-top: 10%;
+    space-between: 10px;
 }
 
 button {
-    border-radius: 0.5rem;
-    border-width: 1px;
-    padding: 0.875rem 1.25rem;
+background-color: black;
+border: none;
+color: white;
+padding: 16px 24px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+border-radius: 50%;
+height: 70px;
+width: 70px;
+line-height: 48px;
+}
+
+img {
+    width:25px;
+}
+
+.ok_button {
+    background-image: url(../assets/ok_icon.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.delete_button {
+    background-image: url(../assets/delete_icon.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+.edit_button {
+    background-image: url(../assets/edit_icon.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
 }
 
 </style>

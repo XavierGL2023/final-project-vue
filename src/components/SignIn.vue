@@ -1,14 +1,9 @@
 <!-- COMPONENTE BOILERPLATE -->
  
   <template>
-
-  <div class="container">
-    <h3 class="header-title">Log In to ToDo App</h3>
-    <p class="header-subtitle">Estamos en la ruta de login. Aquí deberíais crear un form con la lógica correspondiente para que este permita al usuario loguearse con su email y su contraseña. Miraros la lógica de SignUp si necesitáis inspiración :)</p>
-    <p>Dont have an account? <PersonalRouter :route="route" :buttonText="buttonText" class="sign-up-link"/></p>
-  </div>
-
-  <form @submit.prevent="signIn" class="form-sign-in">
+  <div class="container-signin">
+      <h3 class="header-title">Log In to ToDo App</h3>
+      <form @submit.prevent="signIn" class="form-sign-in">
       <div class="form">
         <div class="form-input">
           <label class="input-field-label">E-mail</label>
@@ -32,8 +27,11 @@
             required
           />
         </div>
-        <button class="button" type="submit">Sign In</button>
-        <p>
+        <button class="button-signin" type="submit">Sign In</button>
+      </div>
+    </form>
+  </div>
+  <p class="signup">
           Have an account?
           <PersonalRouter
             :route="route"
@@ -41,9 +39,6 @@
             class="sign-up-link"
           />
         </p>
-      </div>
-    </form>
-
 </template>
 
 <script setup>
@@ -88,4 +83,23 @@ const signIn = async () => {
 };
 </script>
 
-<style></style>
+<style>
+.container-signin{
+  margin: auto;
+    margin-top: 15%;
+    width: 300px;
+    background-color: #F4AD28;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+    padding: 2%;
+    border-radius: 1em;
+}
+
+.button-signin {
+  margin: auto;
+}
+</style>

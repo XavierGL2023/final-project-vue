@@ -1,16 +1,20 @@
 <template>
+    <div class="add-task">
+        <h3>Create New Task</h3>
+        <button class="add_button" @click="addTask"></button>
+    </div>
     <h1>Add a new Task</h1>
     <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
     </div>
     <div class="task-field">
         <div class="input-field">
-            <input type="text" placeholder="Add a Task Title - Listen to Kendrick Lamar" v-model="name">
+            <input type="text" placeholder="Task title" v-model="name">
         </div>
         <div class="input-field">
-            <textarea type="text" placeholder="Add a Task Description - Look up Kendrick Lamar's FEAR album on spotify and listen to the whole album." v-model="description"  maxlength="500" rows="3"></textarea>
+            <textarea type="text" placeholder="Task description" v-model="description"  maxlength="500" rows="3"></textarea>
         </div>
-        <button @click="addTask" class="button">Add</button>
+        <button class="add_button" @click="addTask"></button>
     </div>
 </template>
 
@@ -63,12 +67,64 @@ if(name.value.length === 0 || description.value.length === 0){
     border-radius: 0.5rem;
     border-width: 1px;
     padding: 0.875rem 1.25rem;
+    width: 300px;
+    border: none;
     }
 
     textarea[type="text"] {
     border-radius: 0.5rem;
     border-width: 1px;
     padding: 0.875rem 1.25rem;
+    width: 300px;
+    border: none;
     }
+
+    .add-task {
+    margin: auto;
+    margin-top: 15%;
+    width: 300px;    
+    background-color: #ECECEC;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+    padding: 2%;
+    border-radius: 1em;
+    }
+
+    .round-button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 70px;
+  width: 70
+px;
+  line-height: 48px;
+}
+
+.round-button span {
+  content: "+";
+  display: block;
+  font-size: 24px;
+  line-height: 24px;
+  margin-top: -12px;
+}
+
+.add_button {
+    background-image: url(../assets/add_icon.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
 </style>
   
