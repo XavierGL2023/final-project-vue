@@ -51,7 +51,18 @@ Tareas realizadas:
 
 Apartado signin
 
-Dia 5 - 11/02/2023 / Sabado
+Dia 5 - 20/02/2023 / Lunes
+
+Objetivo: Unir los componentes entre si para que la web empieze a funcionar.
+
+Tareas a realizar:
+
+Trabajar en las rutas para que quede enlazado.
+Empezar a estilar con el CSS.
+
+Tareas realizadas:
+
+Dia 6 - 21/02/2023 / Martes
 
 Objetivo:
 
@@ -59,7 +70,7 @@ Tareas a realizar:
 
 Tareas realizadas:
 
-Dia 6 - 12/02/2023 / Domingo
+Dia 7 - 22/02/2023 / Miercoles
 
 Objetivo:
 
@@ -67,9 +78,7 @@ Tareas a realizar:
 
 Tareas realizadas:
 
-Semana (2/3)
-
-Dia 7 - 13/02/2023 / Lunes
+Dia 8 - 23/02/2023 / Jueves
 
 Objetivo:
 
@@ -77,92 +86,12 @@ Tareas a realizar:
 
 Tareas realizadas:
 
-Dia 8 - 14/02/2023 / Martes
+Dia 9 - 24/02/2023 / Viernes
 
 Objetivo:
 
 Tareas a realizar:
 
 Tareas realizadas:
-
-Dia 9 - 15/02/2023 / Miercoles
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 10 - 16/02/2023 / Jueves
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 11 - 17/02/2023 / Viernes
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 12 - 18/02/2023 / Sabado
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 13 - 19/02/2023 / Domingo
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Semana (3/3)
-
-Dia 14 - 20/02/2023 / Lunes
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 15 - 21/02/2023 / Martes
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 16 - 22/02/2023 / Miercoles
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 17 - 23/02/2023 / Jueves
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
-
-Dia 18 - 24/02/2023 / Viernes
-
-Objetivo:
-
-Tareas a realizar:
-
-Tareas realizadas:
+gregherthtrrtyhjt
+git add .
