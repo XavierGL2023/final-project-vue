@@ -64,9 +64,9 @@ Tareas realizadas:
 
 Dia 6 - 21/02/2023 / Martes
 
-Objetivo: definir toda la web visualmente y finalizar la logica.
+Objetivo: finalizar la logica y definir toda la web visualmente, para posteriormente dedicarme a los detalles de los distintos elementos.
 
-Tareas a realizar: conectar acciones con componentes. Seguir estilando para que empiece a ser una web atractiva.
+Tareas a realizar: conectar rutas / acciones con componentes. Seguir estilando para que empiece a ser una web atractiva.
 
 Tareas realizadas:
 
