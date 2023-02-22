@@ -1,18 +1,18 @@
 <template>
-  <div class="container">
-
-    <div class="header">
-      <div class="header-description">
-        <h3 class="header-title">Register to ToDo App</h3>
-        <p class="header-subtitle">Start organizing your tasks!</p>
+  <div class="fondo-pantalla1">
+    <div class="container-signup">
+      <div class="header">
+        <div class="header-description">
+          <h3 class="header-title">Register to ToDo App</h3>
+          <p class="header-subtitle">Start organizing your tasks!</p>
+        </div>
       </div>
-    </div>
-
-    <form @submit.prevent="signUp" class="form-sign-in">
-      <div class="form">
-        <div class="form-input">
-          <label class="input-field-label">E-mail</label>
-          <input
+      <form @submit.prevent="signUp" class="form-sign-in">
+        <div class="form">
+        </div>
+         <div class="form-input">
+            <label class="input-field-label">E-mail</label>
+            <input
             type="email"
             class="input-field"
             placeholder="example@gmail.com"
@@ -44,7 +44,9 @@
           />
         </div>
         <button class="button" type="submit">Sign Up</button>
-        <p>
+    </form>
+      </div>
+      <p class="account">
           Have an account?
           <PersonalRouter
             :route="route"
@@ -52,8 +54,7 @@
             class="sign-up-link"
           />
         </p>
-      </div>
-    </form>
+
 
     <div v-show="errorMsg">{{errorMsg}}</div>
   </div>
@@ -104,4 +105,32 @@ const signUp = async () => {
 };
 </script>
 
-<style></style>
+<style>
+.container-signup{
+  margin: auto;
+    width: 300px;
+    background-color: #F4AD28;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+    padding: 2%;
+    border-radius: 1em;
+    border: 3px solid #000000;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.fondo-pantalla1 {
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #FFDD0B;
+  height: 1200px;
+
+}
+
+.account{
+ text-align: center;
+}
+</style>

@@ -33,33 +33,24 @@ export const useTaskStore = defineStore("tasks", () => {
       id: id,
     });
   };
-  return { tasksArr, fetchTasks, addTask, deleteTask };
+// actualizar tarea con supabase
+  const updateTask = async (id, taskTitle, taskDescription) => {
+    const { data, error } = await supabase
+      .from("tasks")
+      .update({
+        title: taskTitle, 
+        description: taskDescription
+      })
+      .match({ id });
+  };
+  // completar tarea con supabase
+  const markTaskCompleted = async (id, booleanValue) => {
+    const { data, error } = await supabase
+      .from("tasks")
+      .update({ is_complete: booleanValue })
+      .match({ id });
+  };
+  
+  return { tasksArr, fetchTasks, addTask, deleteTask, markTaskCompleted, updateTask };
 });
 
-const updateTask = async (id, updatedTaskData) => {
-  const { data, error } = await supabase
-    .from("tasks")
-    .update(updatedTaskData)
-    .match({ id });
-
-  if (error) {
-    console.log(error);
-    return null;
-  }
-
-  return data;
-};
-
-const markTaskCompleted = async (id) => {
-  const { data, error } = await supabase
-    .from("tasks")
-    .update({ completed: true })
-    .match({ id });
-
-  if (error) {
-    console.log(error);
-    return null;
-  }
-
-  return data;
-};

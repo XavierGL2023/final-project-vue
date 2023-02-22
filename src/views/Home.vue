@@ -1,20 +1,34 @@
 <template>
   <div class="wrapper">
     <Nav />
-  
-    <NewTask />
-    <h1>Tasks:</h1>
-    <TaskItem v-for="task in tasks" :key="task.id" :task="task" />
+    <div class="task-top">
+    <!-- Button to show/hide newTask comp -->
+    <div class="add-task">
+      <h3>Create New Task</h3>
+      <button class="add_button" @click="showNewTaskComp"></button>
+    </div>   
+    <NewTask v-if="showHideTaskVar" />
+    <h1 class="tasksh1">Tasks:</h1>
+  </div>
+    <div class="mi-cool-div">
+      <TaskItem 
+      v-for="task in tasks" 
+      :key="task.id" :task="task" 
+      @task-complete-emit="taskCompleteSupa"
+      />
+    </div>
+    <Footer />
   </div>
 </template>
 
 <script setup>
-import { ref, onUpdated } from 'vue'
+import { ref, onUpdated } from "vue";
 import { useTaskStore } from "../stores/task";
-import { useRouter } from 'vue-router';
-import Nav from '../components/Nav.vue';
-import NewTask from '../components/NewTask.vue';
-import TaskItem from '../components/TaskItem.vue';
+import { useRouter } from "vue-router";
+import Nav from "../components/Nav.vue";
+import NewTask from "../components/NewTask.vue";
+import TaskItem from "../components/TaskItem.vue";
+import Footer from "../components/Footer.vue";
 
 const taskStore = useTaskStore();
 
@@ -32,9 +46,53 @@ onUpdated(() => {
   getTasks();
 });
 
+// show hide logic
+
+// varbooleana para controlar el estado visbile del comp
+let showHideTaskVar = ref(true);
+
+const showNewTaskComp = () => {
+  showHideTaskVar.value = !showHideTaskVar.value;
+  console.log(showHideTaskVar);
+};
+
+
+// Function to connect to supabase and change the value of the task from is_complete=false to is_complete=true
+const taskCompleteSupa = async (taskInformation) => {
+  // vamos a crear una var que apunte al param taskInformation y usando un poco de concatenacion vamos a sementar el valor de is_cpmplete. UNa vez recibamos el valor como ya VIMOS XAVI vamos a segementar el valor opuesto
+  const toggleTaskStatus = !taskInformation.is_complete
+  // vamos a crear una var que apunte al param taskInformation y usando un poco de concatenacion vamos a sementar el valor del id de la tarea
+  const taskId = taskInformation.id
+  console.log(taskId, toggleTaskStatus)
+
+  // vamos a conectarnos con supabase :) 
+  await taskStore.markTaskCompleted(taskId, toggleTaskStatus)
+}
+
 </script>
 
-<style></style>
+<style>
+.mi-cool-div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #FFDD0B;
+}
+.tasksh1{
+  margin-left: 8%;
+  margin-bottom: 0px;
+}
+
+.task-top {
+  margin-left: 15%;
+    margin-right: 15%;
+    background-color: #FFDD0B;
+}
+
+</style>
 
 <!-- 
 **Hints**

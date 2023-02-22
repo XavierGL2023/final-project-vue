@@ -1,15 +1,23 @@
 <template>
     <div class="container">
         <div class="task-item">
-        <h3 :class="completedTask ? 'clase1' : 'clase2'">{{task.title}}</h3>
-        <p>
-
+        <h3 :class="props.task.is_complete ? 'clase1' : 'clase2'">{{task.title}}</h3>
+        <p :class="props.task.is_complete ? 'clase1' : 'clase2'">{{task.description}}
+        <!-- {{ task.is_complete }} -->
         </p>
         </div>
         <div class="buttons-task">
-        <button class="ok_button" @click="toggleButton"></button>
+        <button class="ok_button" @click="completeTask"></button>
         <button class="delete_button" @click="deleteTask"></button>
         <button class="edit_button" @click="editTask"></button>
+        <div v-if="showEdit">
+            <div class="input-field">
+            <input type="text" placeholder="Task title" v-model="nameChange">
+        </div>
+        <div class="input-field">
+            <textarea type="text" placeholder="Task description" v-model="descriptionChange"  maxlength="500" rows="3"></textarea>
+        </div>
+        </div>
         </div>
     </div>
 </template>
@@ -35,6 +43,24 @@ const toggleButton = () => {
     completedTask.value = !completedTask.value;
 };
 
+// EMIT BLOCK
+
+const emit = defineEmits(['taskCompleteEmit'])
+
+// funcion para completar tarea
+
+const completeTask = () => {
+    console.log("I have been clicked")
+    console.log(props.task)
+    console.log(props.task.is_complete)
+    emit('taskCompleteEmit', props.task)
+}
+
+const editTask = () => {
+
+
+}
+
 </script>
 
 <style>
@@ -44,19 +70,34 @@ const toggleButton = () => {
   }
 
 .container{
-display: flex;
-flex-wrap: wrap;
-width: 300px;
 background-color: #F4AD28;
-padding: 2%;
 border-radius: 1em;
 flex-basis: 25%;
+padding: 1%;
+
+margin: auto;
+margin-bottom: 10%;
+    width: 400px;    
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+    border: 3px solid #000000;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 .buttons-task {
     margin: auto;
     margin-top: 10%;
     space-between: 10px;
+}
+.clase2{
+    text-decoration: none;
+}
+.clase1{
+    text-decoration: line-through;
 }
 
 button {

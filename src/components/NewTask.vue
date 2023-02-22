@@ -1,13 +1,10 @@
 <template>
-    <div class="add-task">
-        <h3>Create New Task</h3>
-        <button class="add_button" @click="addTask"></button>
-    </div>
-    <h1>Add a new Task</h1>
+
     <div v-if="showErrorMessage">
         <p class="error-text">{{ errorMessage }}</p>
     </div>
     <div class="task-field">
+        <h3>Add a new Task</h3>
         <div class="input-field">
             <input type="text" placeholder="Task title" v-model="name">
         </div>
@@ -57,32 +54,10 @@ if(name.value.length === 0 || description.value.length === 0){
 </script>
 
 <style>
-    .task-field {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
-    input[type="text"] {
-    border-radius: 0.5rem;
-    border-width: 1px;
-    padding: 0.875rem 1.25rem;
-    width: 300px;
-    border: none;
-    }
-
-    textarea[type="text"] {
-    border-radius: 0.5rem;
-    border-width: 1px;
-    padding: 0.875rem 1.25rem;
-    width: 300px;
-    border: none;
-    }
-
-    .add-task {
+.add-task {
     margin: auto;
-    margin-top: 15%;
-    width: 300px;    
+    width: 400px;   
     background-color: #ECECEC;
     display: flex;
 	flex-direction: row;
@@ -92,6 +67,40 @@ if(name.value.length === 0 || description.value.length === 0){
 	align-content: stretch;
     padding: 2%;
     border-radius: 1em;
+    border: 3px solid #F4AD28;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    }
+    
+    .task-field {
+        margin: auto;
+        width: 400px;   
+    background-color: #ECECEC;
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+    padding: 2%;
+    border-radius: 1em;
+    border: 3px solid #F4AD28;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    input[type="text"] {
+    border-radius: 0.5rem;
+    border-width: 1px;
+    padding: 0.875rem 1.25rem;
+    width: 275px;
+    border: none;
+    }
+
+    textarea[type="text"] {
+    border-radius: 0.5rem;
+    border-width: 1px;
+    padding: 0.875rem 1.25rem;
+    width: 275px;
+    border: none;
     }
 
     .round-button {

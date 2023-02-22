@@ -1,6 +1,7 @@
 <!-- COMPONENTE BOILERPLATE -->
  
   <template>
+    <div class="fondo-pantalla2">
   <div class="container-signin">
       <h3 class="header-title">Log In to ToDo App</h3>
       <form @submit.prevent="signIn" class="form-sign-in">
@@ -39,6 +40,7 @@
             class="sign-up-link"
           />
         </p>
+      </div>
 </template>
 
 <script setup>
@@ -86,7 +88,6 @@ const signIn = async () => {
 <style>
 .container-signin{
   margin: auto;
-    margin-top: 15%;
     width: 300px;
     background-color: #F4AD28;
     display: flex;
@@ -97,9 +98,22 @@ const signIn = async () => {
     align-content: stretch;
     padding: 2%;
     border-radius: 1em;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    border: 3px solid #000000;
 }
 
 .button-signin {
   margin: auto;
 }
+
+.fondo-pantalla2 {
+  margin-left: 15%;
+    margin-right: 15%;
+    background-color: #FFDD0B;
+    height: 1200px;
+}
+
+.signup{
+  text-align: center;
+} 
 </style>

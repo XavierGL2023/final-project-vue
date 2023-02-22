@@ -2,16 +2,20 @@
   <nav>
     <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
     <router-link to="/">
-      Home
+      <a href="/"><img class="logo-home" src="../assets/esb.svg" alt="logo-home"></a>
     </router-link>
 
     <ul>
         <li>
           <router-link to="/">Task Manager</router-link>
         </li>
+        </ul>
+        <ul>
         <li>
           <router-link to="/clock">Clock</router-link>
         </li>
+      </ul>
+      <ul>
         <li>
           <router-link to="/account">Profile</router-link>
         </li>
@@ -68,6 +72,10 @@ const signOut = async () => {
   width: 90px;
 }
 
+.logo-home{
+width: 100px;
+}
+
 nav {
   background-color: #F4AD28;
   display: flex;
@@ -76,7 +84,8 @@ nav {
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
-  width: 100%;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 nav ul {

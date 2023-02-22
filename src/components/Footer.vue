@@ -1,6 +1,8 @@
 <template>
+  <img src="../assets/taxi.png" alt="taxi pattern">
     <footer>
         <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
+        <img src="../assets/taxi.png" alt="taxi pattern">
       <router-link to="/">
         Home
       </router-link>
@@ -29,3 +31,17 @@
       </div>
     </footer>
   </template>
+  
+<style>
+footer {
+  background-color: #F4AD28;
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+</style>
