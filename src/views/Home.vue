@@ -4,8 +4,8 @@
     <div class="task-top">
     <!-- Button to show/hide newTask comp -->
     <div class="add-task">
-      <h3>Create New Task</h3>
-      <button class="add_button" @click="showNewTaskComp"></button>
+      <h3>Be a NewYorker</h3>
+      <button :class="showHideTaskVar ? 'add_button_close': 'add_button_open'" @click="showNewTaskComp"></button>
     </div>   
    
     <NewTask v-if="showHideTaskVar" />
@@ -15,7 +15,7 @@
     <img class="ny-icon1" src="../assets/esb_icon.svg" alt="Empire-State-Building-icon">
    </div>
     <div class="linea"></div>
-    <h1 class="tasksh1">Being a NewYorker</h1>
+    <h1 class="tasksh1">Now you're in New York!</h1>
   </div>
     <div class="mi-cool-div">
       <TaskItem 
@@ -69,7 +69,7 @@ onUpdated(() => {
 // show hide logic
 
 // varbooleana para controlar el estado visbile del comp
-let showHideTaskVar = ref(true);
+let showHideTaskVar = ref(false);
 
 const showNewTaskComp = () => {
   showHideTaskVar.value = !showHideTaskVar.value;
@@ -116,6 +116,17 @@ const taskCompleteSupa = async (taskInformation) => {
   margin-right: 15%;
   background-color: #FFDD0B;
 }
+
+@media (max-width: 768px) {
+  .mi-cool-div {
+    display: flex;
+    flex-direction: column;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #FFDD0B;
+  }
+}
+
 .tasksh1{
   margin-top: 5%;
   margin-bottom: 5%;
@@ -148,13 +159,20 @@ const taskCompleteSupa = async (taskInformation) => {
  margin-top: 10px;
 }
 
-.add_button {
-  background-image: url(../assets/add_icon.svg);
+.add_button_open {
+  background-image: url(../assets/apple.svg);
+    background-position: 50% 50%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-color: #F4AD28;
+}
+
+.add_button_close {
+  background-image: url(../assets/edit_icon.svg);
   background-position: 50% 50%;
   background-size: auto;
   background-repeat: no-repeat;
 }
-
 
 
 </style>

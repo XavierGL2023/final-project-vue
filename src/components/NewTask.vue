@@ -4,7 +4,7 @@
         <p class="error-text">{{ errorMessage }}</p>
     </div>
     <div class="task-field">
-        <h3>New York what to do</h3>
+        <h3>Stuff to do...</h3>
         <div class="input-field">
             <input type="text" placeholder="Task title" v-model="name">
         </div>
@@ -69,6 +69,12 @@ if(name.value.length === 0 || description.value.length === 0){
     border: 3px solid #F4AD28;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
     }
+
+    @media (max-width: 768px) {
+  .add-task {
+    width: 95%; 
+  }
+}
     
     .task-field {
         margin: auto;
@@ -85,6 +91,12 @@ if(name.value.length === 0 || description.value.length === 0){
     border: 3px solid #F4AD28;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
     }
+
+    @media (max-width: 768px) {
+  .task-field {
+    width: 95%; 
+  }
+}
 
     input[type="text"] {
     border-radius: 0.5rem;
@@ -129,11 +141,11 @@ px;
 }
 
 .add_button2 {
-    background-image: url(../assets/apple.svg);
+  background-color: #F4AD28;
+  background-image: url(../assets/tasklist.svg);
     background-position: 50% 50%;
-    background-size: 80%;
+    background-size: 70%;
     background-repeat: no-repeat;
-    background-color: #F4AD28;
 }
 
 </style>

@@ -51,16 +51,18 @@ export default {
   font-size: 3em;
   font-weight: bold;
   text-align: center;
-  padding: 0.5em;
   background-color: #eee;
-  padding: 2%;
-  width: 300px;
   padding: 2%;
     border: 3px solid #F4AD28;
     box-shadow: 3px 3px rgb(0 0 0 / 40%);
   margin: auto;
     width: 400px;
     height: 200px;
+}
+@media (max-width: 768px) {
+  .clock {
+    width: 95%;
+  }
 }
 .hour, .minute, .second {
   display: inline-block;
@@ -74,8 +76,15 @@ export default {
 	justify-content: space-around;
 	align-items: center;
 	align-content: stretch;
+  margin-top: 5%;
   margin-left:30%;
   margin-right: 30%;
+}
+@media (max-width: 768px) {
+  .clock-pack {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .ny-time {

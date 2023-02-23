@@ -59,8 +59,15 @@
 
 
     <div v-show="errorMsg">{{errorMsg}}</div>
+    <div class="icons2">
+    <img class="ny-icon1" src="../assets/liberty_icon.svg" alt="Liberty-icon">
+    <img class="ny-icon1" src="../assets/taxi_icon.svg" alt="Taxi-icon">
+    <img class="ny-icon1" src="../assets/esb_icon.svg" alt="Empire-State-Building-icon">
+   </div>
+   <div class="linea"></div>
     </div>
     </div>
+    
 </template>
 
 <script setup>
@@ -142,6 +149,13 @@ h3 {
     border: 3px solid #000000;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
 }
+
+@media (max-width: 768px) {
+  .container-signup {
+    width: 100%;
+  }
+}
+
 .account{
  text-align: center;
 }

@@ -7,19 +7,70 @@
         </p>
         </div>
         <div class="buttons-task">
-        <button class="delete_button" @click="deleteTask"></button>
-        <button class="edit_button" @click="editTask"></button>
-        <button class="ok_button" @click="completeTask"></button>
-        <div v-if="showEdit">
+        <button v-if="hide_boolean" class="edit_button" @click="editTask"></button>
+        <button v-if="!hide_boolean" class="ok_button" @click="completeTask"></button>
+        <button v-else class="ok_return_button" @click="completeTask"></button>
+        <button v-if="hide_boolean" class="delete_button" @click="showModalToggle"></button>
+        <div class="modalcontainer">
+      <div class="modal-mask" v-if="showModal">
+         <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <div class="modal-header">
+            <slot name="header">
+              Are you sure you want to delete the task "{{ task.title }}" ?
+            </slot>
+          </div>  
+
+          <div class="modal-body">
+            <!--<slot name="body">
+              default body
+            </slot>-->
+          </div>
+
+          <div class="modal-footer">
+            <slot name="footer">
+              <button class="botonokmod" @click="deleteTask">Yes</button>
+              <button class="botoncancmod" @click="showModalToggle">Cancel</button>
+            </slot>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- <h2>Are you sure you want to delete the task "{{ task.title }}" ?</h2>
+      <button @click="deleteTask">Yes</button>
+      <button @click="showModalToggle">Cancel</button> -->
+      </div>
+
+        <div class="modal-mask" v-if="showModalEdit">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+
+          <div class="modal-header">
+            <slot name="header">
+              Here you can edit your task "{{ task.title }}" 
+            </slot>
+          </div>
             <div class="input-field">
-            <input type="text" placeholder="Task title" v-model="nameChange">
+                <input type="text" placeholder="Task title" v-model="nameChange">
+            </div>
+            <div class="input-field">
+                <textarea type="text" placeholder="Task description" v-model="descriptionChange"  maxlength="500" rows="3"></textarea>
+            </div>
+            <div class="modal-footer">
+            <slot name="footer">
+              <div class="absolutePosition" v-if="showErrorMessage">
+                <p class="error-text">{{ errorMessage }}</p>
+              </div>
+
+              <button class="buttonSendData" @click="sendData">Confirm</button>
+            </slot>
+          </div>
+            <!--<button @click="sendData">Send data</button>-->
         </div>
-        <div class="input-field">
-            <textarea type="text" placeholder="Task description" v-model="descriptionChange"  maxlength="500" rows="3"></textarea>
         </div>
-        <button @click="sendData">Send data</button>
-        </div>
-        </div>
+    </div>
+    </div>
     </div>
 </template>
 
@@ -33,6 +84,13 @@ const showEdit = ref(false);
 const nameChange = ref("");
 const descriptionChange = ref("");
 const canEdit = ref(!props.task.is_complete);
+const hide_boolean = ref(true)
+const showModalEdit = ref(false);
+const showModalInputToggle = () =>{
+    showModalEdit.value = !showModalEdit.value;
+};
+
+
 
 const props = defineProps({
     task: Object,
@@ -42,12 +100,19 @@ const props = defineProps({
 const deleteTask = async() => {
     // if canEdit -> then.delete. 
     await taskStore.deleteTask(props.task.id);
+    // Afegit 23/02
+    showModalToggle();
 };
 
 const completedTask = ref(false)
 const toggleButton = () => {
     completedTask.value = !completedTask.value;
 };
+// Afegit 23/02
+const showModal = ref(false);
+const showModalToggle = () => {
+    showModal.value = !showModal.value;
+}
 
 // EMIT BLOCK
 
@@ -60,15 +125,18 @@ const completeTask = () => {
     console.log(props.task)
     console.log(props.task.is_complete)
     emit('taskCompleteEmit', props.task)
+    hide_boolean.value = !hide_boolean.value
 }
 
 const editTask = () => {
     showEdit.value = true;
+    showModalInputToggle();
 }
 
 const sendData = () => {
     taskStore.updateTask(props.task.id, nameChange.value, descriptionChange.value);
     showEdit.value = false;
+    showModalEdit.value = !showModalEdit.value;
 }
 
 </script>
@@ -148,8 +216,15 @@ img {
     width:25px;
 }
 
-.ok_button {
+.ok_return_button {
     background-image: url(../assets/ok_icon.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: 20px 10px;
+}
+.ok_button {
+    background-image: url(../assets/login.svg);
     background-position: 50% 50%;
     background-size: auto;
     background-repeat: no-repeat;
@@ -168,6 +243,48 @@ img {
     background-size: auto;
     background-repeat: no-repeat;
     margin: 20px 10px;
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.modal-container {
+  width: 300px;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  border-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
 }
 
 </style>

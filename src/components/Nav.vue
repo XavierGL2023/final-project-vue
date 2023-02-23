@@ -24,7 +24,7 @@
     <div>
       <ul>
         <li class="log-out-welcome">
-          <p>Hi, user</p>
+          <p>Hi, {{ userEmail }}</p>
         </li>
         <li>
           <button @click="signOut" class="logout_button"></button>
@@ -68,6 +68,37 @@ const signOut = async () => {
 </script>
 
 <style>
+
+@media screen and (min-width: 768px) {
+  .menu-button {
+    display: none;
+  }
+  .menu-items {
+    display: flex !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .menu-items {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background-color: #F4AD28;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+  .menu-items.show-menu {
+    display: flex;
+  }
+  .menu-items li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
 .navbar-img {
   width: 90px;
 }
@@ -94,6 +125,15 @@ nav {
   margin-left: 15%;
   margin-right: 15%;
   box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+  margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 nav ul {
