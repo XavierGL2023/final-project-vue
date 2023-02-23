@@ -1,11 +1,11 @@
-<!-- COMPONENTE BOILERPLATE -->
- 
   <template>
-    <div class="fondo-pantalla2">
-  <div class="container-signin">
-      <h3 class="header-title">Log In to ToDo App</h3>
-      <form @submit.prevent="signIn" class="form-sign-in">
-      <div class="form">
+    <div class="one-element">
+      <div class="centered">
+        <h3>NewYork ToDo App</h3>
+      <div class="container-signin">
+        <h3 class="header-title">Log In to ToDo App</h3>
+        <form @submit.prevent="signIn" class="form-sign-in">
+        <div class="form">
         <div class="form-input">
           <label class="input-field-label">E-mail</label>
           <input
@@ -28,7 +28,7 @@
             required
           />
         </div>
-        <button class="button-signin" type="submit">Sign In</button>
+        <button class="button-signin" type="submit"></button>
       </div>
     </form>
   </div>
@@ -41,6 +41,7 @@
           />
         </p>
       </div>
+    </div>
 </template>
 
 <script setup>
@@ -86,14 +87,26 @@ const signIn = async () => {
 </script>
 
 <style>
+
+body {
+  background-color: #FFDD0B;
+}
+
+.button-signin {
+    background-image: url(../assets/login.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
 .container-signin{
   margin: auto;
-    width: 300px;
+  width: 30%;
+  height: 50%;
     background-color: #F4AD28;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     align-content: stretch;
     padding: 2%;
@@ -102,18 +115,21 @@ const signIn = async () => {
     border: 3px solid #000000;
 }
 
-.button-signin {
-  margin: auto;
-}
-
-.fondo-pantalla2 {
-  margin-left: 15%;
-    margin-right: 15%;
-    background-color: #FFDD0B;
-    height: 1200px;
-}
-
 .signup{
   text-align: center;
 } 
+
+.one-element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Opcional: establece la altura del contenedor para que ocupe todo el viewport */
+}
+
+.centered {
+  /* Opcional: ajusta el tamaño y el margen del elemento que deseas centrar */
+  width: 50%;
+  height: 50%;
+  margin: auto;
+}
 </style>

@@ -1,47 +1,45 @@
 <template>
-  <img src="../assets/taxi.png" alt="taxi pattern">
     <footer>
-        <!-- <PersonalRouter :route="route" :buttonText="buttonText" class="logo-link"/> -->
-        <img src="../assets/taxi.png" alt="taxi pattern">
-      <router-link to="/">
-        Home
-      </router-link>
-  
-      <ul>
-          <li>
-            <router-link to="/">Task Manager</router-link>
-          </li>
-          <li>
-            <router-link to="/clock">Clock</router-link>
-          </li>
-          <li>
-            <router-link to="/account">Profile</router-link>
-          </li>
-      </ul>
-  
-      <div>
-        <ul>
-          <li class="log-out-welcome">
-            <p>Hi, user</p>
-          </li>
-          <li>
-            <button @click="signOut" class="button">Log out</button>
-          </li>
-        </ul>
-      </div>
+    <ul>
+        <li>
+          <img class="rrss" src="../assets/tiktok.svg" alt="tiktok-icon">
+        </li>
+        <li>
+          <img class="rrss" src="../assets/instagram.svg" alt="instagram-icon">
+        </li>
+        <li>
+          <img class="rrss" src="../assets/twitch.svg" alt="twitch-icon">
+        </li>
+        <li>
+          <img class="rrss" src="../assets/youtube.svg" alt="youtube-icon">
+        </li>
+    </ul>
     </footer>
   </template>
   
 <style>
+
 footer {
   background-color: #F4AD28;
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
   margin-left: 15%;
   margin-right: 15%;
+  box-shadow: 3px 3px rgb(0 0 0 / 40%);
+}
+
+footer ul {
+  list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.rrss {
+  border-radius: 0;
+  width: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 </style>

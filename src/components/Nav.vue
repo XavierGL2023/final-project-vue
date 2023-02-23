@@ -12,7 +12,7 @@
         </ul>
         <ul>
         <li>
-          <router-link to="/clock">Clock</router-link>
+          <a href="#clock">Clock</a>
         </li>
       </ul>
       <ul>
@@ -27,7 +27,7 @@
           <p>Hi, user</p>
         </li>
         <li>
-          <button @click="signOut" class="button">Log out</button>
+          <button @click="signOut" class="logout_button"></button>
         </li>
       </ul>
     </div>
@@ -76,6 +76,13 @@ const signOut = async () => {
 width: 100px;
 }
 
+.logout_button {
+    background-image: url(../assets/logout.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+}
+
 nav {
   background-color: #F4AD28;
   display: flex;
@@ -86,6 +93,7 @@ nav {
 	align-content: stretch;
   margin-left: 15%;
   margin-right: 15%;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 nav ul {

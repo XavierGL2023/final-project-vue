@@ -1,9 +1,27 @@
 <template>
+  <div class="clock-pack">
+    
+    <img class="ny-time" src="../assets/location.svg" alt="Location-icon">
+    
     <div class="clock">
-    <span class="hour">{{ hours }}</span>:
-    <span class="minute">{{ minutes }}</span>:
-    <span class="second">{{ seconds }}</span>
+      <p>The City That Never Sleeps</p>
+    <span class="hour">{{ hours.toLocaleString('en-US', {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        })}}</span>:
+    <span class="minute">{{ minutes.toLocaleString('en-US', {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        })}}</span>:
+    <span class="second">{{ seconds.toLocaleString('en-US', {
+          minimumIntegerDigits: 2,
+          useGrouping: false,
+        })}}</span>
   </div>
+  
+    <img class="ny-time" src="../assets/clock.svg" alt="Clock-icon">
+    
+</div>
 </template>
 
 <script>
@@ -36,12 +54,35 @@ export default {
   padding: 0.5em;
   background-color: #eee;
   padding: 2%;
-  border-radius: 1em;
   width: 300px;
+  padding: 2%;
+    border: 3px solid #F4AD28;
+    box-shadow: 3px 3px rgb(0 0 0 / 40%);
+  margin: auto;
+    width: 400px;
+    height: 200px;
 }
 .hour, .minute, .second {
   display: inline-block;
   width: 1.5em;
+}
+
+.clock-pack {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+  margin-left:30%;
+  margin-right: 30%;
+}
+
+.ny-time {
+  border-radius: 0;
+  margin-bottom: 0;
+  max-width: 10%;
+ max-height: 10%;
 }
 
 </style>

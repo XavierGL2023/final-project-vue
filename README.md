@@ -72,17 +72,17 @@ Tareas realizadas:
 
 Dia 7 - 22/02/2023 / Miercoles
 
-Objetivo:
+Objetivo: finalizar la logica y definir toda la web visualmente, para posteriormente dedicarme a los detalles de los distintos elementos.
 
-Tareas a realizar:
+Tareas a realizar: conectar rutas / acciones con componentes. Seguir estilando para que empiece a ser una web atractiva.
 
 Tareas realizadas:
 
 Dia 8 - 23/02/2023 / Jueves
 
-Objetivo:
+Objetivo: finalizar la logica y definir toda la web visualmente, para posteriormente dedicarme a los detalles de los distintos elementos.
 
-Tareas a realizar:
+Tareas a realizar: conectar rutas / acciones con componentes. Seguir estilando para que empiece a ser una web atractiva.
 
 Tareas realizadas:
 

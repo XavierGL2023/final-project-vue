@@ -1,9 +1,11 @@
 <template>
-  <div class="fondo-pantalla1">
+  <div class="one-element">
+      <div class="centered">
+        <h3>NewYork ToDo App</h3>
     <div class="container-signup">
       <div class="header">
         <div class="header-description">
-          <h3 class="header-title">Register to ToDo App</h3>
+          <h3 class="header-title">Register to enjoy The Big Apple</h3>
           <p class="header-subtitle">Start organizing your tasks!</p>
         </div>
       </div>
@@ -43,7 +45,7 @@
             required
           />
         </div>
-        <button class="button" type="submit">Sign Up</button>
+        <button class="button-signup" type="submit"></button>
     </form>
       </div>
       <p class="account">
@@ -57,7 +59,8 @@
 
 
     <div v-show="errorMsg">{{errorMsg}}</div>
-  </div>
+    </div>
+    </div>
 </template>
 
 <script setup>
@@ -106,9 +109,27 @@ const signUp = async () => {
 </script>
 
 <style>
+
+body {
+  background-color: #FFDD0B;
+}
+
+h3 {
+  text-align: center;
+}
+
+.button-signup {
+    background-image: url(../assets/signup.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+
 .container-signup{
   margin: auto;
-    width: 300px;
+  width: 30%;
+  height: 50%;
     background-color: #F4AD28;
     display: flex;
     flex-direction: column;
@@ -121,15 +142,6 @@ const signUp = async () => {
     border: 3px solid #000000;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
 }
-
-.fondo-pantalla1 {
-  margin-left: 15%;
-  margin-right: 15%;
-  background-color: #FFDD0B;
-  height: 1200px;
-
-}
-
 .account{
  text-align: center;
 }

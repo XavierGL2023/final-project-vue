@@ -4,14 +4,14 @@
         <p class="error-text">{{ errorMessage }}</p>
     </div>
     <div class="task-field">
-        <h3>Add a new Task</h3>
+        <h3>New York what to do</h3>
         <div class="input-field">
             <input type="text" placeholder="Task title" v-model="name">
         </div>
         <div class="input-field">
             <textarea type="text" placeholder="Task description" v-model="description"  maxlength="500" rows="3"></textarea>
         </div>
-        <button class="add_button" @click="addTask"></button>
+        <button class="add_button2" @click="addTask"></button>
     </div>
 </template>
 
@@ -37,7 +37,7 @@ if(name.value.length === 0 || description.value.length === 0){
     // Primero comprobamos que ningún campo del input esté vacío y lanzamos el error con un timeout para informar al user.
 
     showErrorMessage.value = true;
-    errorMessage.value = 'The task title or description is empty';
+    errorMessage.value = 'Nothing to do? Come on!';
     setTimeout(() => {
     showErrorMessage.value = false;
     }, 5000);
@@ -57,14 +57,13 @@ if(name.value.length === 0 || description.value.length === 0){
 
 .add-task {
     margin: auto;
-    width: 400px;   
+    width: 30%;  
     background-color: #ECECEC;
     display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: stretch;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
     padding: 2%;
     border-radius: 1em;
     border: 3px solid #F4AD28;
@@ -73,16 +72,16 @@ if(name.value.length === 0 || description.value.length === 0){
     
     .task-field {
         margin: auto;
-        width: 400px;   
+        margin-top: 5%;
+        margin-bottom: 5%;
+        width: 30%;   
     background-color: #ECECEC;
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-evenly;
 	align-items: center;
-	align-content: stretch;
     padding: 2%;
-    border-radius: 1em;
     border: 3px solid #F4AD28;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
     }
@@ -129,11 +128,13 @@ px;
   margin-top: -12px;
 }
 
-.add_button {
-    background-image: url(../assets/add_icon.svg);
+.add_button2 {
+    background-image: url(../assets/apple.svg);
     background-position: 50% 50%;
-    background-size: auto;
+    background-size: 80%;
     background-repeat: no-repeat;
+    background-color: #F4AD28;
 }
+
 </style>
   

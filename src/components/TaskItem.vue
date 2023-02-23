@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-task">
         <div class="task-item">
         <h3 :class="props.task.is_complete ? 'clase1' : 'clase2'">{{task.title}}</h3>
         <p :class="props.task.is_complete ? 'clase1' : 'clase2'">{{task.description}}
@@ -7,9 +7,9 @@
         </p>
         </div>
         <div class="buttons-task">
-        <button class="ok_button" @click="completeTask"></button>
         <button class="delete_button" @click="deleteTask"></button>
         <button class="edit_button" @click="editTask"></button>
+        <button class="ok_button" @click="completeTask"></button>
         <div v-if="showEdit">
             <div class="input-field">
             <input type="text" placeholder="Task title" v-model="nameChange">
@@ -17,6 +17,7 @@
         <div class="input-field">
             <textarea type="text" placeholder="Task description" v-model="descriptionChange"  maxlength="500" rows="3"></textarea>
         </div>
+        <button @click="sendData">Send data</button>
         </div>
         </div>
     </div>
@@ -28,6 +29,10 @@ import { useTaskStore } from '../stores/task';
 import { supabase } from '../supabase';
 
 const taskStore = useTaskStore();
+const showEdit = ref(false);
+const nameChange = ref("");
+const descriptionChange = ref("");
+const canEdit = ref(!props.task.is_complete);
 
 const props = defineProps({
     task: Object,
@@ -35,6 +40,7 @@ const props = defineProps({
 
 // Función para borrar la tarea a través de la store. El problema que tendremos aquí (y en NewTask.vue) es que cuando modifiquemos la base de datos los cambios no se verán reflejados en el v-for de Home.vue porque no estamos modificando la variable tasks guardada en Home. Usad el emit para cambiar esto y evitar ningún page refresh.
 const deleteTask = async() => {
+    // if canEdit -> then.delete. 
     await taskStore.deleteTask(props.task.id);
 };
 
@@ -57,8 +63,12 @@ const completeTask = () => {
 }
 
 const editTask = () => {
+    showEdit.value = true;
+}
 
-
+const sendData = () => {
+    taskStore.updateTask(props.task.id, nameChange.value, descriptionChange.value);
+    showEdit.value = false;
 }
 
 </script>
@@ -71,13 +81,25 @@ const editTask = () => {
 
 .container{
 background-color: #F4AD28;
-border-radius: 1em;
 flex-basis: 25%;
 padding: 1%;
-
 margin: auto;
 margin-bottom: 10%;
-    width: 400px;    
+width: 30%; 
+    display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: stretch;
+    border: 3px solid #000000;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+.container-task{
+background-color: #F4AD28;
+margin: auto;
+margin-bottom: 10%;
+width: 95%; 
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -95,9 +117,13 @@ margin-bottom: 10%;
 }
 .clase2{
     text-decoration: none;
+    margin-top: 20px;
+    text-align: left;
 }
 .clase1{
     text-decoration: line-through;
+    margin-top: 20px;
+    text-align: left;
 }
 
 button {
@@ -115,6 +141,7 @@ border-radius: 50%;
 height: 70px;
 width: 70px;
 line-height: 48px;
+box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
 }
 
 img {
@@ -126,18 +153,21 @@ img {
     background-position: 50% 50%;
     background-size: auto;
     background-repeat: no-repeat;
+    margin: 20px 10px;
 }
 .delete_button {
     background-image: url(../assets/delete_icon.svg);
     background-position: 50% 50%;
     background-size: auto;
     background-repeat: no-repeat;
+    margin: 20px 10px;
 }
 .edit_button {
     background-image: url(../assets/edit_icon.svg);
     background-position: 50% 50%;
     background-size: auto;
     background-repeat: no-repeat;
+    margin: 20px 10px;
 }
 
 </style>

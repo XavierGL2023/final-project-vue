@@ -7,8 +7,15 @@
       <h3>Create New Task</h3>
       <button class="add_button" @click="showNewTaskComp"></button>
     </div>   
+   
     <NewTask v-if="showHideTaskVar" />
-    <h1 class="tasksh1">Tasks:</h1>
+    <div class="icons2">
+    <img class="ny-icon1" src="../assets/liberty_icon.svg" alt="Liberty-icon">
+    <img class="ny-icon1" src="../assets/taxi_icon.svg" alt="Taxi-icon">
+    <img class="ny-icon1" src="../assets/esb_icon.svg" alt="Empire-State-Building-icon">
+   </div>
+    <div class="linea"></div>
+    <h1 class="tasksh1">Being a NewYorker</h1>
   </div>
     <div class="mi-cool-div">
       <TaskItem 
@@ -17,6 +24,18 @@
       @task-complete-emit="taskCompleteSupa"
       />
     </div>
+    <div class="icons1">
+    <img class="ny-icon2" src="../assets/basketball.svg" alt="Basketball-icon">
+    <img class="ny-icon2" src="../assets/hotdog.svg" alt="Hotdog-iconn">
+    <img class="ny-icon2" src="../assets/baseball.svg" alt="Baseball-icon">
+    <img class="ny-icon2" src="../assets/pizza.svg" alt="Pizza-icon">
+    <img class="ny-icon2" src="../assets/football.svg" alt="Football-icon">
+    <img class="ny-icon2" src="../assets/burger.svg" alt="Burger-icon">
+   </div>
+    <div id="clock">
+    <ClockComponent />
+  </div>
+    
     <Footer />
   </div>
 </template>
@@ -29,6 +48,7 @@ import Nav from "../components/Nav.vue";
 import NewTask from "../components/NewTask.vue";
 import TaskItem from "../components/TaskItem.vue";
 import Footer from "../components/Footer.vue";
+import ClockComponent from "../components/ClockComponent.vue";
 
 const taskStore = useTaskStore();
 
@@ -72,25 +92,70 @@ const taskCompleteSupa = async (taskInformation) => {
 </script>
 
 <style>
+
+.icons1 {
+  display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.icons2 {
+  display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
 .mi-cool-div {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
   margin-left: 15%;
   margin-right: 15%;
   background-color: #FFDD0B;
 }
 .tasksh1{
-  margin-left: 8%;
-  margin-bottom: 0px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-align: center;
 }
 
 .task-top {
   margin-left: 15%;
-    margin-right: 15%;
-    background-color: #FFDD0B;
+  margin-right: 15%;
+  margin-top: 5%;
+  background-color: #FFDD0B;
 }
+
+.linea {
+  border-top: 3px solid black;
+  padding: 0;
+}
+.ny-icon1 {
+  border-radius: 0;
+  margin-bottom: 0;
+  max-width: 10%;
+ max-height: 10%;
+}
+
+.ny-icon2 {
+  border-radius: 0;
+  margin-bottom: 0;
+  max-width: 4%;
+ max-height: 4%;
+ margin-top: 10px;
+}
+
+.add_button {
+  background-image: url(../assets/add_icon.svg);
+  background-position: 50% 50%;
+  background-size: auto;
+  background-repeat: no-repeat;
+}
+
+
 
 </style>
 
