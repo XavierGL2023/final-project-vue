@@ -21,10 +21,10 @@
 
 footer {
   background-color: #F4AD28;
-  margin-top: 5%;
   margin-left: 15%;
   margin-right: 15%;
   box-shadow: 3px 3px rgb(0 0 0 / 40%);
+  height: 130px;
 }
 @media (max-width: 768px) {
   footer {
@@ -45,7 +45,7 @@ footer ul {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 130px;
 }
 @media (max-width: 768px) {
   footer ul{
@@ -54,7 +54,17 @@ footer ul {
     margin-left: 0;
     margin-right: 0;
     justify-content: center;
+    height: 100px;
   }
+}
+
+@media (max-width: 768px) {
+    footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
 }
 
 .rrss {

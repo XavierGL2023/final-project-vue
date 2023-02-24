@@ -110,7 +110,9 @@ const taskCompleteSupa = async (taskInformation) => {
 
     @media (max-width: 768px) {
   .add-task {
-    width: 95%; 
+    width: 95%;
+    margin-top: 20%;
+    margin-bottom: 20%;
   }
 }
 
@@ -143,6 +145,14 @@ const taskCompleteSupa = async (taskInformation) => {
   margin-top: 5%;
   margin-bottom: 5%;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .tasksh1{
+  margin-top: 20%;
+  margin-bottom: 20%;
+  text-align: center;
+}
 }
 
 .task-top {

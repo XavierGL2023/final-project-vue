@@ -18,20 +18,13 @@
 
           <div class="modal-header">
             <slot name="header">
-              Are you sure you want to delete the task "{{ task.title }}" ?
+              <h3>Delete the task: "{{ task.title }}" ?</h3>
             </slot>
-          </div>  
-
-          <div class="modal-body">
-            <!--<slot name="body">
-              default body
-            </slot>-->
-          </div>
-
+          </div> 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="botonokmod" @click="deleteTask">Yes</button>
-              <button class="botoncancmod" @click="showModalToggle">Cancel</button>
+              <button class="botonokmod" @click="deleteTask"></button>
+              <button class="botoncancmod" @click="showModalToggle"></button>
             </slot>
           </div>
           </div>
@@ -48,7 +41,7 @@
 
           <div class="modal-header">
             <slot name="header">
-              Here you can edit your task "{{ task.title }}" 
+              <h3>Edit the task "{{ task.title }}"</h3>
             </slot>
           </div>
             <div class="input-field">
@@ -63,7 +56,7 @@
                 <p class="error-text">{{ errorMessage }}</p>
               </div>
 
-              <button class="buttonSendData" @click="sendData">Confirm</button>
+              <button class="buttonSendData" @click="sendData"></button>
             </slot>
           </div>
             <!--<button @click="sendData">Send data</button>-->
@@ -143,6 +136,29 @@ const sendData = () => {
 
 <style>
 
+.buttonSendData {
+  background-image: url(../assets/calendar.svg);
+    background-position: 50% 50%;
+    background-size: 60%;
+    background-repeat: no-repeat;
+    margin: 10px;
+}
+
+.botonokmod {
+  background-image: url(../assets/delete_icon.svg);
+    background-position: 50% 50%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    margin: 10px;
+}
+.botoncancmod {
+  background-image: url(../assets/return.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 45%;
+    margin: 10px;
+  }
+
 .hover-bg {
     background-color: white;
   }
@@ -177,6 +193,12 @@ width: 95%;
     border: 3px solid #000000;
     border-radius: 15px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .container-task {
+    margin-bottom: 20%;
+  }
 }
 
 .buttons-task {
@@ -254,7 +276,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 221, 11, 0.5);
   display: table;
   transition: opacity 0.3s ease;
 }
@@ -265,20 +287,37 @@ img {
 }
 
 .modal-container {
-  width: 300px;
-  margin: 0px auto;
-  padding: 20px 30px;
-  background-color: #fff;
-  border-radius: 5px;
-  border-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 2%;
+  width: 30%;
+  background-color: #F4AD28;
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: space-evenly;
+	align-items: center;
+  border: 3px solid #000000;
+  border-radius: 15px;
+  box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
-  font-family: Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .modal-container {
+    width: 80%;
+  }
+}
+
+.modal-wrapper {
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 .modal-header h3 {
   margin-top: 0;
-  color: #42b983;
+  color: black;
 }
 
 .modal-body {

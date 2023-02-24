@@ -37,7 +37,7 @@ if(name.value.length === 0 || description.value.length === 0){
     // Primero comprobamos que ningún campo del input esté vacío y lanzamos el error con un timeout para informar al user.
 
     showErrorMessage.value = true;
-    errorMessage.value = 'Nothing to do? Come on!';
+    errorMessage.value = 'Are you sure? Do something!';
     setTimeout(() => {
     showErrorMessage.value = false;
     }, 5000);
@@ -77,7 +77,8 @@ if(name.value.length === 0 || description.value.length === 0){
 
     @media (max-width: 768px) {
   .task-field {
-    width: 95%; 
+    width: 95%;
+    margin-bottom: 20%;
   }
 }
 
@@ -85,7 +86,7 @@ if(name.value.length === 0 || description.value.length === 0){
     border-radius: 0.5rem;
     border-width: 1px;
     padding: 0.875rem 1.25rem;
-    width: 275px;
+    width: 95%;
     border: none;
     }
 
@@ -93,7 +94,7 @@ if(name.value.length === 0 || description.value.length === 0){
     border-radius: 0.5rem;
     border-width: 1px;
     padding: 0.875rem 1.25rem;
-    width: 275px;
+    width: 95%;
     border: none;
     }
 

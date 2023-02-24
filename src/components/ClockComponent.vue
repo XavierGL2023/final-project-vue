@@ -61,6 +61,7 @@ export default {
 @media (max-width: 768px) {
   .clock {
     width: 95%;
+    margin-bottom: 20%;
   }
 }
 .hour, .minute, .second {
