@@ -3,7 +3,7 @@
       <div class="centered">
         <h3>NewYork ToDo App</h3>
       <div class="container-signin">
-        <h3 class="header-title">Log In to ToDo App</h3>
+        <h2 class="header-title">Sign In</h2>
         <form @submit.prevent="signIn" class="form-sign-in">
         <div class="form">
         <div class="form-input">
@@ -28,8 +28,8 @@
             required
           />
         </div>
-        <button class="button-signin" type="submit"></button>
       </div>
+      <button class="button-signin" type="submit"></button>
     </form>
   </div>
   <p class="signup">
@@ -40,7 +40,7 @@
             class="sign-up-link"
           />
         </p>
-        <div class="icons2">
+        <div class="icons3">
     <img class="ny-icon1" src="../assets/liberty_icon.svg" alt="Liberty-icon">
     <img class="ny-icon1" src="../assets/taxi_icon.svg" alt="Taxi-icon">
     <img class="ny-icon1" src="../assets/esb_icon.svg" alt="Empire-State-Building-icon">
@@ -112,13 +112,15 @@ body {
     background-color: #F4AD28;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     align-items: center;
     align-content: stretch;
     padding: 2%;
-    border-radius: 1em;
+    border-radius: 15px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
     border: 3px solid #000000;
+    margin-top: 3%;
 }
 
 @media (max-width: 768px) {
@@ -130,6 +132,7 @@ body {
 
 .signup{
   text-align: center;
+  margin-top: 3%;
 } 
 
 .one-element {
@@ -144,5 +147,19 @@ body {
   width: 50%;
   height: 50%;
   margin: auto;
+}
+
+.icons3 {
+  display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+.form-sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

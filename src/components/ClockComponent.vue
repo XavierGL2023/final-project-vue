@@ -1,10 +1,7 @@
 <template>
   <div class="clock-pack">
-    
-    <img class="ny-time" src="../assets/location.svg" alt="Location-icon">
-    
+    <div id="clock_ny">
     <div class="clock">
-      <p>The City That Never Sleeps</p>
     <span class="hour">{{ hours.toLocaleString('en-US', {
           minimumIntegerDigits: 2,
           useGrouping: false,
@@ -18,9 +15,7 @@
           useGrouping: false,
         })}}</span>
   </div>
-  
-    <img class="ny-time" src="../assets/clock.svg" alt="Clock-icon">
-    
+</div>
 </div>
 </template>
 
@@ -47,17 +42,21 @@ export default {
 
 <style scoped>
 .clock {
-  display: inline-block;
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   font-size: 3em;
   font-weight: bold;
   text-align: center;
-  background-color: #eee;
+  background-color: #ECECEC;
   padding: 2%;
-    border: 3px solid #F4AD28;
-    box-shadow: 3px 3px rgb(0 0 0 / 40%);
   margin: auto;
-    width: 400px;
-    height: 200px;
+  width: 30%;
+  border-radius: 15px;
+  border: 3px solid #F4AD28;    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 @media (max-width: 768px) {
   .clock {
@@ -67,31 +66,6 @@ export default {
 .hour, .minute, .second {
   display: inline-block;
   width: 1.5em;
-}
-
-.clock-pack {
-  display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: center;
-	align-content: stretch;
-  margin-top: 5%;
-  margin-left:30%;
-  margin-right: 30%;
-}
-@media (max-width: 768px) {
-  .clock-pack {
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-.ny-time {
-  border-radius: 0;
-  margin-bottom: 0;
-  max-width: 10%;
- max-height: 10%;
 }
 
 </style>

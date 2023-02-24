@@ -4,7 +4,7 @@
     <div class="task-top">
     <!-- Button to show/hide newTask comp -->
     <div class="add-task">
-      <h3>Be a NewYorker</h3>
+      <h1>Be a NewYorker</h1>
       <button :class="showHideTaskVar ? 'add_button_close': 'add_button_open'" @click="showNewTaskComp"></button>
     </div>   
    
@@ -24,18 +24,16 @@
       @task-complete-emit="taskCompleteSupa"
       />
     </div>
+    <div class="bottom">
+    <div class="linea"></div>
     <div class="icons1">
-    <img class="ny-icon2" src="../assets/basketball.svg" alt="Basketball-icon">
-    <img class="ny-icon2" src="../assets/hotdog.svg" alt="Hotdog-iconn">
-    <img class="ny-icon2" src="../assets/baseball.svg" alt="Baseball-icon">
-    <img class="ny-icon2" src="../assets/pizza.svg" alt="Pizza-icon">
-    <img class="ny-icon2" src="../assets/football.svg" alt="Football-icon">
-    <img class="ny-icon2" src="../assets/burger.svg" alt="Burger-icon">
+    <img class="ny-icon2" src="../assets/underground.svg" alt="Underground-icon">
+    <img class="ny-icon2" src="../assets/chrysler.svg" alt="Chrysler-icon">
+    <img class="ny-icon2" src="../assets/jazz.svg" alt="Jazz-icon">
    </div>
-    <div id="clock">
+   <h1 class="tasksh1">The City That Never Sleeps</h1>
     <ClockComponent />
   </div>
-    
     <Footer />
   </div>
 </template>
@@ -93,13 +91,27 @@ const taskCompleteSupa = async (taskInformation) => {
 
 <style>
 
-.icons1 {
-  display:flex;
+.add-task {
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 30%;  
+    background-color: #ECECEC;
+    display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    margin-left: 15%;
-    margin-right: 15%;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 2%;
+    border-radius: 15px;
+    border: 3px solid #F4AD28;
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 768px) {
+  .add-task {
+    width: 95%; 
+  }
 }
 
 .icons2 {
@@ -151,14 +163,6 @@ const taskCompleteSupa = async (taskInformation) => {
  max-height: 10%;
 }
 
-.ny-icon2 {
-  border-radius: 0;
-  margin-bottom: 0;
-  max-width: 4%;
- max-height: 4%;
- margin-top: 10px;
-}
-
 .add_button_open {
   background-image: url(../assets/apple.svg);
     background-position: 50% 50%;
@@ -168,10 +172,35 @@ const taskCompleteSupa = async (taskInformation) => {
 }
 
 .add_button_close {
-  background-image: url(../assets/edit_icon.svg);
-  background-position: 50% 50%;
-  background-size: auto;
-  background-repeat: no-repeat;
+  background-image: url(../assets/return.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 45%;
+}
+
+.ny-time {
+  border-radius: 0;
+  margin-bottom: 0;
+  max-width: 10%;
+ max-height: 10%;
+}
+.ny-icon2 {
+    border-radius: 0;
+    margin-bottom: 0;
+    max-width: 10%;
+    max-height: 10%;
+}
+
+.icons1 {
+  display:flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.bottom {
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 

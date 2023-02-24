@@ -5,11 +5,10 @@
     <div class="container-signup">
       <div class="header">
         <div class="header-description">
-          <h3 class="header-title">Register to enjoy The Big Apple</h3>
-          <p class="header-subtitle">Start organizing your tasks!</p>
+          <h2 class="header-title">Sign Up</h2>
         </div>
       </div>
-      <form @submit.prevent="signUp" class="form-sign-in">
+      <form @submit.prevent="signUp" class="form-sign-up">
         <div class="form">
         </div>
          <div class="form-input">
@@ -59,7 +58,7 @@
 
 
     <div v-show="errorMsg">{{errorMsg}}</div>
-    <div class="icons2">
+    <div class="icons3">
     <img class="ny-icon1" src="../assets/liberty_icon.svg" alt="Liberty-icon">
     <img class="ny-icon1" src="../assets/taxi_icon.svg" alt="Taxi-icon">
     <img class="ny-icon1" src="../assets/esb_icon.svg" alt="Empire-State-Building-icon">
@@ -145,9 +144,10 @@ h3 {
     align-items: center;
     align-content: stretch;
     padding: 2%;
-    border-radius: 1em;
+    border-radius: 15px;
     border: 3px solid #000000;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    margin-top:3%;
 }
 
 @media (max-width: 768px) {
@@ -157,6 +157,13 @@ h3 {
 }
 
 .account{
- text-align: center;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.form-sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>

@@ -7,17 +7,17 @@
 
     <ul>
         <li>
-          <router-link to="/">Task Manager</router-link>
+          <router-link to="/"><h3>Task Manager</h3></router-link>
         </li>
         </ul>
         <ul>
         <li>
-          <a href="#clock">Clock</a>
+          <a href="#clock_ny"><h3>Clock</h3></a>
         </li>
       </ul>
       <ul>
         <li>
-          <router-link to="/account">Profile</router-link>
+          <router-link to="/account"><h3>Profile</h3></router-link>
         </li>
     </ul>
 

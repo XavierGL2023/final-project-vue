@@ -4,7 +4,7 @@
         <p class="error-text">{{ errorMessage }}</p>
     </div>
     <div class="task-field">
-        <h3>Stuff to do...</h3>
+        <h2 class="stuff">Stuff to do...</h2>
         <div class="input-field">
             <input type="text" placeholder="Task title" v-model="name">
         </div>
@@ -54,41 +54,24 @@ if(name.value.length === 0 || description.value.length === 0){
 </script>
 
 <style>
-
-.add-task {
-    margin: auto;
-    width: 30%;  
-    background-color: #ECECEC;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    align-items: center;
-    padding: 2%;
-    border-radius: 1em;
-    border: 3px solid #F4AD28;
-    box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
+    .stuff{
+      margin-bottom: 5%;
     }
-
-    @media (max-width: 768px) {
-  .add-task {
-    width: 95%; 
-  }
-}
     
     .task-field {
         margin: auto;
         margin-top: 5%;
         margin-bottom: 5%;
-        width: 30%;   
-    background-color: #ECECEC;
+        padding: 2%;
+        width: 30%;
+    background-color: #F4AD28;
     display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: space-evenly;
 	align-items: center;
-    padding: 2%;
-    border: 3px solid #F4AD28;
+    border: 3px solid #000000;
+    border-radius: 15px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
     }
 
@@ -123,12 +106,10 @@ if(name.value.length === 0 || description.value.length === 0){
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
   border-radius: 50%;
   height: 70px;
-  width: 70
-px;
+  width: 70px;
   line-height: 48px;
 }
 
@@ -141,11 +122,16 @@ px;
 }
 
 .add_button2 {
-  background-color: #F4AD28;
-  background-image: url(../assets/tasklist.svg);
+  background-color: black;
+  background-image: url(../assets/calendar.svg);
     background-position: 50% 50%;
-    background-size: 70%;
+    background-size: 60%;
     background-repeat: no-repeat;
+    margin-top:5%;
+}
+
+.input-field {
+  margin: 5px;
 }
 
 </style>

@@ -7,10 +7,10 @@
         </p>
         </div>
         <div class="buttons-task">
-        <button v-if="hide_boolean" class="edit_button" @click="editTask"></button>
-        <button v-if="!hide_boolean" class="ok_button" @click="completeTask"></button>
-        <button v-else class="ok_return_button" @click="completeTask"></button>
-        <button v-if="hide_boolean" class="delete_button" @click="showModalToggle"></button>
+            <button v-if="hide_boolean" class="edit_button" @click="editTask"></button>
+            <button v-if="!hide_boolean" class="ok_button" @click="completeTask"></button>
+            <button v-else class="ok_return_button" @click="completeTask"></button>
+            <button v-if="hide_boolean" class="delete_button" @click="showModalToggle"></button>
         <div class="modalcontainer">
       <div class="modal-mask" v-if="showModal">
          <div class="modal-wrapper">
@@ -175,6 +175,7 @@ width: 95%;
 	align-items: center;
 	align-content: stretch;
     border: 3px solid #000000;
+    border-radius: 15px;
     box-shadow: 3px 3px rgba(0, 0, 0, 0.4);
 }
 
@@ -216,15 +217,16 @@ img {
     width:25px;
 }
 
-.ok_return_button {
-    background-image: url(../assets/ok_icon.svg);
+.ok_button {
+    background-image: url(../assets/return.svg);
     background-position: 50% 50%;
     background-size: auto;
     background-repeat: no-repeat;
     margin: 20px 10px;
+    background-size: 45%;
 }
-.ok_button {
-    background-image: url(../assets/login.svg);
+.ok_return_button {
+    background-image: url(../assets/ok_icon.svg);
     background-position: 50% 50%;
     background-size: auto;
     background-repeat: no-repeat;
