@@ -125,11 +125,10 @@ h3 {
 }
 
 .button-signup {
-    background-image: url(../assets/signup.svg);
+  background-image: url(../assets/login.svg);
     background-position: 50% 50%;
     background-size: auto;
     background-repeat: no-repeat;
-    background-size: 70%;
 }
 
 .container-signup{
